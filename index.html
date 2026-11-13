@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="VIBE · Resonance. Klickbarer Prototyp by T1T CORE.">
+  <title>VIBE · Resonance</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+  <link rel="apple-touch-icon" href="img/icon-180.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="device" id="app">
+
+    <section class="screen is-active" id="screen-start" data-screen="start">
+      <div class="splash">
+        <div class="splash-top"><span class="kicker">VIBE</span></div>
+        <div class="splash-logo">
+          <img src="img/logo.svg" width="196" height="196" alt="VIBE Zeichen">
+        </div>
+        <div class="splash-type">
+          <h1 class="splash-claim">VIBE<br>NEU GEDACHT</h1>
+          <p class="splash-word">RESONANCE</p>
+        </div>
+        <div class="splash-bottom">
+          <div class="splash-credit">
+            <span class="kicker">VIBE</span>
+            <span class="byline">by T1T CORE</span>
+          </div>
+          <span class="splash-cta">Tippen zum Start</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen has-nav" id="screen-kreis" data-screen="kreis">
+      <header class="app-header">
+        <div class="app-brand">
+          <img src="img/logo.svg" width="28" height="28" alt="">
+          <span>VIBE</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="text-link" data-go="regeln">Regeln</button>
+          <span class="chip">Beispiel</span>
+        </div>
+      </header>
+      <div class="screen-body">
+        <div class="page">
+          <p class="kicker">Kreis</p>
+          <h1 class="page-title">Dein Kreis</h1>
+          <p class="page-lead">Synergien im B2B und im Zwischenmenschlichen. Du entscheidest, wen du triffst.</p>
+
+          <div class="hero-niki">
+            <strong>NIKI</strong>
+            <p>Natürliche und künstliche Intelligenz im Einklang. Die KI schlägt vor, du entscheidest.</p>
+          </div>
+
+          <div class="pilot-note">
+            <strong>Geschlossener Testkreis</strong>
+            <p>Im Pilot werden Vorschläge zunächst von Menschen ausgewählt und als kuratierter Vorschlag gekennzeichnet. Simulierte maschinelle Hinweise tragen die Kennzeichnung KI-Vorschlag.</p>
+          </div>
+
+          <div class="section-label"><span>Neue Vorschläge</span><button type="button" data-go="finder">Alle</button></div>
+          <div id="kreis-vorschlaege"></div>
+
+          <div class="section-label">Angenommen</div>
+          <div id="kreis-angenommen"></div>
+
+          <div class="section-label">Treffen</div>
+          <div id="kreis-treffen"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen has-nav" id="screen-finder" data-screen="finder">
+      <header class="app-header">
+        <div class="app-brand">
+          <img src="img/logo.svg" width="28" height="28" alt="">
+          <span>VIBE</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="text-link" data-go="regeln">Regeln</button>
+          <span class="chip">Beispiel</span>
+        </div>
+      </header>
+      <div class="screen-body">
+        <div class="page finder-wrap">
+          <p class="kicker">Resonanz-Finder</p>
+          <h1 class="page-title">Was schwingt?</h1>
+          <p class="page-lead">Vorschläge mit kurzer Begründung, klar markiert und nur simuliert. Annehmen oder Ablehnen liegt bei dir.</p>
+
+          <div class="pilot-note compact">
+            <p>Im geschlossenen Kreis stehen kuratierte Vorschläge vor KI-Vorschlägen. Jede Begründung bleibt nachvollziehbar.</p>
+          </div>
+
+          <div class="filters">
+            <button type="button" class="filter is-on" data-filter="beide">Beides</button>
+            <button type="button" class="filter" data-filter="b2b">B2B</button>
+            <button type="button" class="filter" data-filter="mensch">Mensch</button>
+          </div>
+
+          <div id="finder-card"></div>
+          <div id="finder-empty" class="finder-empty" hidden>
+            <p>Keine offenen Vorschläge in diesem Filter. Schau im Kreis nach, wen du schon angenommen hast.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen has-nav" id="screen-profil" data-screen="profil">
+      <header class="app-header">
+        <div class="app-brand">
+          <img src="img/logo.svg" width="28" height="28" alt="">
+          <span>VIBE</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="text-link" data-go="regeln">Regeln</button>
+          <span class="chip">Beispiel</span>
+        </div>
+      </header>
+      <div class="screen-body">
+        <div class="page">
+          <p class="kicker">Profil</p>
+          <h1 class="page-title">So wirkst du</h1>
+          <p class="page-lead">Drei Blickwinkel, eine Person: Geschäft, Begegnung und Werte.</p>
+
+          <div class="card" style="margin-top:16px">
+            <div class="profile-head">
+              <div class="avatar lg" style="background:#0a6f9a">DU</div>
+              <div>
+                <div class="person-name">Du <span class="chip">Beispielprofil</span></div>
+                <div class="person-sub">Deggendorf, offen für Begegnungen darüber hinaus</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <button type="button" class="tab is-on" data-side="b2b">B2B</button>
+            <button type="button" class="tab" data-side="mensch">Mensch</button>
+            <button type="button" class="tab" data-side="werte">Werte</button>
+          </div>
+
+          <div id="profil-b2b" class="card">
+            <div class="field">
+              <div class="field-label">Wirkungsraum</div>
+              <div class="field-value">Gestaltung und lokale Wirtschaft, Start in Deggendorf</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Bietet</div>
+              <div class="field-value">Klare Zusammenarbeit, gute Vorbereitung, offene Abstimmung</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Sucht</div>
+              <div class="field-value">Synergien, verlässliche Partner, auch international gedacht</div>
+            </div>
+            <div class="directory-box">
+              <div class="switch-row">
+                <button type="button" class="switch" id="dir-switch" role="switch" aria-checked="false" data-act="directory" aria-label="Im Verzeichnis zeigen">
+                  <span class="switch-knob"></span>
+                </button>
+                <div>
+                  <div class="field-label" style="margin-bottom:4px">Im Verzeichnis zeigen</div>
+                  <div class="field-value" style="font-size:15px">Signal statt Rauschen by T1T Core</div>
+                </div>
+              </div>
+              <p class="consent" id="dir-consent">Dein B2B-Profil erscheint im KI-Business-Verzeichnis „Signal statt Rauschen“ by T1T Core nur, wenn du zustimmst. Der Schalter ist standardmäßig aus. Wenn du ihn einschaltest, erlaubst du die Aufnahme deines geschäftlichen Profils. Menschliche Angaben und Werte bleiben außen vor, bis du das später extra freigibst. Im Prototyp wird nichts übertragen.</p>
+            </div>
+          </div>
+
+          <div id="profil-mensch" class="card" hidden>
+            <div class="field">
+              <div class="field-label">Art der Begegnung</div>
+              <div class="field-value">Direkt und freundlich, ohne Lärm</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Was gut tut</div>
+              <div class="field-value">Ehrliche Gespräche, gemeinsames Arbeiten, Kaffee</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Treffen</div>
+              <div class="field-value">Gern vor Ort, in Ruhe, der Mensch entscheidet den Rahmen</div>
+            </div>
+          </div>
+
+          <div id="profil-werte" class="card" hidden>
+            <div class="field">
+              <div class="field-label">Meine Werte</div>
+              <p class="werte-lead">Beispielhafte Grundlage für eine persönliche Werte-Datei, angelehnt an die Idee des T1T-Vertrauenskreises.</p>
+            </div>
+            <ul class="werte-list">
+              <li>
+                <strong>Trust</strong>
+                <span>Ich begegne offen und halte, was ich zusage.</span>
+              </li>
+              <li>
+                <strong>Relevance</strong>
+                <span>Ich bringe das ein, was im Gespräch wirklich zählt.</span>
+              </li>
+              <li>
+                <strong>True</strong>
+                <span>Ich spreche klar und ohne Verstellung.</span>
+              </li>
+            </ul>
+            <p class="note">Die verbindlichen Kernwerte von T1T Core bleiben Trust, Relevance, True.</p>
+          </div>
+
+          <div class="card trust-card">
+            <div class="field-label">Was andere von dir sehen</div>
+            <p class="trust-intro">Vertrauen wächst Schritt für Schritt. Erst nach einem bestätigten, echten Treffen wird mehr sichtbar.</p>
+            <div class="trust-steps" data-level="explain">
+              <div class="trust-step">
+                <span>1</span>
+                <strong>Kennenlernen</strong>
+                <em>Basis, Name und Wirkungsraum</em>
+              </div>
+              <div class="trust-step">
+                <span>2</span>
+                <strong>Nach dem Treffen</strong>
+                <em>Mehr zu Angebot, Suche und Begegnung</em>
+              </div>
+              <div class="trust-step">
+                <span>3</span>
+                <strong>Vertrauenskreis</strong>
+                <em>Auch die Werte-Datei</em>
+              </div>
+            </div>
+          </div>
+
+
+          <p class="byline page-byline">by T1T CORE</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen has-nav" id="screen-treffen" data-screen="treffen">
+      <header class="app-header">
+        <div class="app-brand">
+          <img src="img/logo.svg" width="28" height="28" alt="">
+          <span>VIBE</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="text-link" data-go="regeln">Regeln</button>
+          <span class="chip">Beispiel</span>
+        </div>
+      </header>
+      <div class="screen-body">
+        <div class="page">
+          <div id="treffen-liste">
+            <p class="kicker">Treffen</p>
+            <h1 class="page-title">Ihr kommt zusammen</h1>
+            <p class="page-lead">Die KI setzt kein Treffen fest. Ort und Zeit vereinbarst du selbst.</p>
+            <div class="section-label">Anfragen</div>
+            <div id="treffen-offen"></div>
+          </div>
+
+          <div id="treffen-form" hidden>
+            <p class="kicker">Treffen</p>
+            <h1 class="page-title" id="treffen-titel">Treffen vorschlagen</h1>
+            <p class="page-lead" id="treffen-lead">Ort und Zeit bestimmst du.</p>
+            <form id="treffen-form-el" style="margin-top:18px">
+              <input type="hidden" id="f-with" name="with" value="">
+              <div class="form-field">
+                <label for="f-place">Treffpunkt</label>
+                <input id="f-place" name="place" maxlength="80" autocomplete="off" value="Café am Fluss (Beispiel), Deggendorf">
+              </div>
+              <div class="form-field">
+                <label for="f-when">Zeit</label>
+                <input id="f-when" name="when" maxlength="40" autocomplete="off" value="Freitag, 10 Uhr">
+              </div>
+              <div class="form-field">
+                <label for="f-note">Nachricht</label>
+                <textarea id="f-note" name="note" maxlength="200">Gern in Ruhe, ohne Druck.</textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Anfrage legen</button>
+              <p class="note">Nur ein Prototyp. Es geht keine Nachricht raus.</p>
+              <button type="button" class="btn btn-ghost btn-full" data-go="treffen">Zurück zur Übersicht</button>
+            </form>
+          </div>
+
+          <div id="treffen-ok" class="confirm" hidden>
+            <span class="chip chip-ok">Nur Prototyp</span>
+            <h2>Anfrage liegt bereit</h2>
+            <p class="page-lead" id="ok-text">Im Prototyp wird nichts versendet.</p>
+            <button type="button" class="btn btn-primary btn-full" data-go="kreis">Zum Kreis</button>
+            <button type="button" class="btn btn-ghost btn-full" data-go="treffen">Zu den Treffen</button>
+          </div>
+
+          <div id="treffen-feedback" hidden>
+            <p class="kicker">Rückmeldung</p>
+            <h1 class="page-title">Nach dem Treffen</h1>
+            <p class="page-lead" id="feedback-lead">Eine kurze Frage, keine Sterne und keine Bewertung der Person.</p>
+            <div class="card" style="margin-top:18px">
+              <div class="row-person" id="feedback-person"></div>
+              <p class="feedback-question">Hatte das Treffen Resonanz?</p>
+              <div class="feedback-choices" id="feedback-choices">
+                <button type="button" class="btn btn-primary" data-act="feedback" data-value="ja">Ja</button>
+                <button type="button" class="btn btn-ghost" data-act="feedback" data-value="teilweise">Teilweise</button>
+                <button type="button" class="btn btn-ghost" data-act="feedback" data-value="nein">Nein</button>
+              </div>
+              <p class="note" id="feedback-hint">Deine kurze Rückmeldung hilft, künftige Vorschläge zu verbessern. Im Prototyp wird nichts gespeichert, außer in dieser Sitzung.</p>
+              <div id="feedback-done" hidden>
+                <p class="feedback-thanks" id="feedback-thanks"></p>
+                <button type="button" class="btn btn-primary btn-full" data-go="kreis">Zum Kreis</button>
+                <button type="button" class="btn btn-ghost btn-full" id="feedback-profile-link">Profil ansehen</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen has-nav" id="screen-regeln" data-screen="regeln">
+      <header class="app-header">
+        <div class="app-brand">
+          <img src="img/logo.svg" width="28" height="28" alt="">
+          <span>VIBE</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="text-link" data-go="kreis">Zum Kreis</button>
+          <span class="chip">Beispiel</span>
+        </div>
+      </header>
+      <div class="screen-body">
+        <div class="page">
+          <p class="kicker">Vertrauen</p>
+          <h1 class="page-title">Unsere Regeln</h1>
+          <p class="page-lead">Das Versprechen von VIBE, klar und ohne Kleingedrucktes.</p>
+
+          <ol class="rules-list">
+            <li>
+              <strong>Keine Werbung</strong>
+              <span>VIBE ist kein Marktplatz für Anzeigen. Dich erwartet keine Werbung Dritter.</span>
+            </li>
+            <li>
+              <strong>Kein Verkauf von Daten</strong>
+              <span>Persönliche Angaben und Begegnungen werden nicht verkauft und nicht an Dritte weitergegeben.</span>
+            </li>
+            <li>
+              <strong>Jeder Vorschlag wird erklärt</strong>
+              <span>Ob von einem Menschen kuratiert oder als KI-Vorschlag markiert: Du siehst immer eine kurze, ehrliche Begründung.</span>
+            </li>
+            <li>
+              <strong>Der Mensch entscheidet</strong>
+              <span>Annehmen, Ablehnen, Treffen und Freigaben liegen allein bei dir. Die Technik schlägt nur vor.</span>
+            </li>
+          </ol>
+
+          <div class="pilot-note">
+            <strong>Im geschlossenen Testkreis</strong>
+            <p>Vorschläge werden zuerst von Menschen kuratiert. Eine spätere technische Anbindung folgt erst nach einem Datenschutz-Check.</p>
+          </div>
+
+          <p class="byline page-byline">by T1T CORE</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen has-nav" id="screen-person" data-screen="person">
+      <header class="app-header">
+        <div class="app-brand">
+          <img src="img/logo.svg" width="28" height="28" alt="">
+          <span>VIBE</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="text-link" data-go="kreis">Zum Kreis</button>
+          <span class="chip">Beispiel</span>
+        </div>
+      </header>
+      <div class="screen-body">
+        <div class="page" id="person-page"></div>
+      </div>
+    </section>
+
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <button type="button" class="nav-btn" data-nav="kreis">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 3"/></svg>
+        Kreis
+      </button>
+      <button type="button" class="nav-btn" data-nav="finder">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16.5L20 20.5"/></svg>
+        Finder
+      </button>
+      <button type="button" class="nav-btn" data-nav="treffen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M4 9.5h16"/></svg>
+        Treffen
+      </button>
+      <button type="button" class="nav-btn" data-nav="profil">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="3.2"/><path d="M6.5 19c1.2-3 3.1-4.5 5.5-4.5S16.8 16 18 19"/></svg>
+        Profil
+      </button>
+    </nav>
+
+    <div class="toast" id="toast" role="status"></div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
